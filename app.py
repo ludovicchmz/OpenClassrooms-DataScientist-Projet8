@@ -79,7 +79,7 @@ fig = go.Figure(go.Indicator(
 st.plotly_chart(fig)
 
 # 5. Explication de la décision (Waterfall plot)
-st.header("1. Explication (optionnelle) de la prise de décision du modèle")
+st.header("Explication de la prise de décision du modèle")
 
 try:
     with open('explainer.sav', 'rb') as f:
@@ -114,7 +114,7 @@ if waterfall_box:
     st.pyplot(waterfall)
 
 # 6. Affichage des caractéristiques du client
-st.header("2. Affichage (optionnel) des caractéristiques du client")
+st.header("Affichage des caractéristiques du client")
 
 # Récupération des features non scalées
 url_client = "https://openclassrooms-datascientist-projet7.onrender.com/client_features"
@@ -136,7 +136,7 @@ data_to_show = data_client.loc[data_client["feature_name"].isin(options), :]
 st.write(data_to_show)
 
 # 7. Comparaison avec des clients similaires
-st.header("3. Comparaison avec des clients similaires (Même âge, mêmes revenus, même montant de crédit)")
+st.header("Comparaison avec des clients similaires (Même âge, mêmes revenus, même montant de crédit)")
 
 # Récupération des features importantes
 df = pd.DataFrame(shap_values[0].values)
